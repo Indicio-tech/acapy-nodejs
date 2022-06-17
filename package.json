@@ -1,6 +1,6 @@
 {
-  "name": "acapy-nodejs",
-  "version": "0.0.1",
+  "name": "@indiciopbc/acapy-nodejs",
+  "version": "0.0.2",
   "description": "",
   "main": "typescript-node-client/api.js",
   "scripts": {

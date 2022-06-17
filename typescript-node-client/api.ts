@@ -12479,6 +12479,7 @@ export class VoidAuth implements Authentication {
 }
 
 export enum ActionMenuApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -12489,6 +12490,7 @@ export class ActionMenuApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -12555,6 +12557,8 @@ export class ActionMenuApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -12611,6 +12615,8 @@ export class ActionMenuApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -12671,6 +12677,8 @@ export class ActionMenuApi {
             body: ObjectSerializer.serialize(body, "PerformRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -12727,6 +12735,8 @@ export class ActionMenuApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -12787,6 +12797,8 @@ export class ActionMenuApi {
             body: ObjectSerializer.serialize(body, "SendMenu")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -12815,6 +12827,7 @@ export class ActionMenuApi {
     }
 }
 export enum BasicmessageApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -12825,6 +12838,7 @@ export class BasicmessageApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -12893,6 +12907,8 @@ export class BasicmessageApi {
             body: ObjectSerializer.serialize(body, "SendMessage")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -12921,6 +12937,7 @@ export class BasicmessageApi {
     }
 }
 export enum ConnectionApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -12931,6 +12948,7 @@ export class ConnectionApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -13012,6 +13030,8 @@ export class ConnectionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13074,6 +13094,8 @@ export class ConnectionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13131,6 +13153,8 @@ export class ConnectionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13187,6 +13211,8 @@ export class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -13252,6 +13278,8 @@ export class ConnectionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13308,6 +13336,8 @@ export class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -13371,6 +13401,8 @@ export class ConnectionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13429,6 +13461,8 @@ export class ConnectionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ConnectionMetadataSetRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -13502,6 +13536,8 @@ export class ConnectionApi {
             body: ObjectSerializer.serialize(body, "CreateInvitationRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13554,6 +13590,8 @@ export class ConnectionApi {
             body: ObjectSerializer.serialize(body, "ConnectionStaticRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13592,7 +13630,7 @@ export class ConnectionApi {
      * @param their_role Their role in the connection protocol
      * @param {*} [options] Override http request options.
      */
-    public connectionsGet (alias?: string, connection_protocol?: 'connections/1.0' | 'didexchange/1.0', invitation_key?: string, my_did?: string, state?: 'request' | 'start' | 'invitation' | 'abandoned' | 'completed' | 'response' | 'error' | 'active' | 'init', their_did?: string, their_role?: 'invitee' | 'requester' | 'inviter' | 'responder', options: any = {}) : Promise<{ response: http.IncomingMessage; body: ConnectionList;  }> {
+    public connectionsGet (alias?: string, connection_protocol?: 'connections/1.0' | 'didexchange/1.0', invitation_key?: string, my_did?: string, state?: 'invitation' | 'error' | 'start' | 'request' | 'init' | 'abandoned' | 'active' | 'completed' | 'response', their_did?: string, their_role?: 'invitee' | 'requester' | 'inviter' | 'responder', options: any = {}) : Promise<{ response: http.IncomingMessage; body: ConnectionList;  }> {
         const localVarPath = this.basePath + '/connections';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13615,7 +13653,7 @@ export class ConnectionApi {
         }
 
         if (state !== undefined) {
-            localVarQueryParameters['state'] = ObjectSerializer.serialize(state, "'request' | 'start' | 'invitation' | 'abandoned' | 'completed' | 'response' | 'error' | 'active' | 'init'");
+            localVarQueryParameters['state'] = ObjectSerializer.serialize(state, "'invitation' | 'error' | 'start' | 'request' | 'init' | 'abandoned' | 'active' | 'completed' | 'response'");
         }
 
         if (their_did !== undefined) {
@@ -13638,6 +13676,8 @@ export class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -13706,6 +13746,8 @@ export class ConnectionApi {
             body: ObjectSerializer.serialize(body, "ReceiveInvitationRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13734,6 +13776,7 @@ export class ConnectionApi {
     }
 }
 export enum CredentialDefinitionApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -13744,6 +13787,7 @@ export class CredentialDefinitionApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -13833,6 +13877,8 @@ export class CredentialDefinitionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13890,6 +13936,8 @@ export class CredentialDefinitionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -13946,6 +13994,8 @@ export class CredentialDefinitionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -14009,6 +14059,8 @@ export class CredentialDefinitionApi {
             body: ObjectSerializer.serialize(body, "CredentialDefinitionSendRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14037,6 +14089,7 @@ export class CredentialDefinitionApi {
     }
 }
 export enum CredentialsApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -14047,6 +14100,7 @@ export class CredentialsApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -14113,6 +14167,8 @@ export class CredentialsApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14170,6 +14226,8 @@ export class CredentialsApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14226,6 +14284,8 @@ export class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -14294,6 +14354,8 @@ export class CredentialsApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14351,6 +14413,8 @@ export class CredentialsApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14407,6 +14471,8 @@ export class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -14472,6 +14538,8 @@ export class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -14540,6 +14608,8 @@ export class CredentialsApi {
             body: ObjectSerializer.serialize(body, "W3CCredentialsListRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14568,6 +14638,7 @@ export class CredentialsApi {
     }
 }
 export enum DidExchangeApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -14578,6 +14649,7 @@ export class DidExchangeApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -14654,6 +14726,8 @@ export class DidExchangeApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14720,6 +14794,8 @@ export class DidExchangeApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -14806,6 +14882,8 @@ export class DidExchangeApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14878,6 +14956,8 @@ export class DidExchangeApi {
             body: ObjectSerializer.serialize(body, "DIDXRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -14906,6 +14986,7 @@ export class DidExchangeApi {
     }
 }
 export enum DiscoverFeaturesApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -14916,6 +14997,7 @@ export class DiscoverFeaturesApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -14990,6 +15072,8 @@ export class DiscoverFeaturesApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15045,6 +15129,8 @@ export class DiscoverFeaturesApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15073,6 +15159,7 @@ export class DiscoverFeaturesApi {
     }
 }
 export enum DiscoverFeaturesV20ApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -15083,6 +15170,7 @@ export class DiscoverFeaturesV20Api {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -15157,6 +15245,8 @@ export class DiscoverFeaturesV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15212,6 +15302,8 @@ export class DiscoverFeaturesV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15240,6 +15332,7 @@ export class DiscoverFeaturesV20Api {
     }
 }
 export enum EndorseTransactionApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -15250,6 +15343,7 @@ export class EndorseTransactionApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -15315,6 +15409,8 @@ export class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -15388,6 +15484,8 @@ export class EndorseTransactionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15449,6 +15547,8 @@ export class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -15517,6 +15617,8 @@ export class EndorseTransactionApi {
             body: ObjectSerializer.serialize(body, "ModelDate")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15566,6 +15668,8 @@ export class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -15624,6 +15728,8 @@ export class EndorseTransactionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15680,6 +15786,8 @@ export class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -15738,6 +15846,8 @@ export class EndorseTransactionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15794,6 +15904,8 @@ export class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -15852,6 +15964,8 @@ export class EndorseTransactionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15880,6 +15994,7 @@ export class EndorseTransactionApi {
     }
 }
 export enum IntroductionApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -15890,6 +16005,7 @@ export class IntroductionApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -15971,6 +16087,8 @@ export class IntroductionApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -15999,6 +16117,7 @@ export class IntroductionApi {
     }
 }
 export enum IssueCredentialV10ApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -16009,6 +16128,7 @@ export class IssueCredentialV10Api {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -16070,6 +16190,8 @@ export class IssueCredentialV10Api {
             body: ObjectSerializer.serialize(body, "V10CredentialConnFreeOfferRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16121,6 +16243,8 @@ export class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialCreate")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16179,6 +16303,8 @@ export class IssueCredentialV10Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16235,6 +16361,8 @@ export class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16295,6 +16423,8 @@ export class IssueCredentialV10Api {
             body: ObjectSerializer.serialize(body, "V10CredentialIssueRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16353,6 +16483,8 @@ export class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialProblemReportRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16413,6 +16545,8 @@ export class IssueCredentialV10Api {
             body: ObjectSerializer.serialize(body, "V10CredentialBoundOfferRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16469,6 +16603,8 @@ export class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16528,6 +16664,8 @@ export class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialStoreRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16599,6 +16737,8 @@ export class IssueCredentialV10Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16650,6 +16790,8 @@ export class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialFreeOfferRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16703,6 +16845,8 @@ export class IssueCredentialV10Api {
             body: ObjectSerializer.serialize(body, "V10CredentialProposalRequestMand")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16755,6 +16899,8 @@ export class IssueCredentialV10Api {
             body: ObjectSerializer.serialize(body, "V10CredentialProposalRequestOpt")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16783,6 +16929,7 @@ export class IssueCredentialV10Api {
     }
 }
 export enum IssueCredentialV20ApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -16793,6 +16940,7 @@ export class IssueCredentialV20Api {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -16854,6 +17002,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredOfferConnFreeRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -16905,6 +17055,8 @@ export class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20IssueCredSchemaCore")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -16963,6 +17115,8 @@ export class IssueCredentialV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17019,6 +17173,8 @@ export class IssueCredentialV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17079,6 +17235,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredIssueRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17137,6 +17295,8 @@ export class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredIssueProblemReportRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17197,6 +17357,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredBoundOfferRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17256,6 +17418,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredRequestRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17314,6 +17478,8 @@ export class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredStoreRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17385,6 +17551,8 @@ export class IssueCredentialV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17436,6 +17604,8 @@ export class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredOfferRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17489,6 +17659,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredExFree")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17540,6 +17712,8 @@ export class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredExFree")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17593,6 +17767,8 @@ export class IssueCredentialV20Api {
             body: ObjectSerializer.serialize(body, "V20CredRequestFree")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17621,6 +17797,7 @@ export class IssueCredentialV20Api {
     }
 }
 export enum JsonldApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -17631,6 +17808,7 @@ export class JsonldApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -17692,6 +17870,8 @@ export class JsonldApi {
             body: ObjectSerializer.serialize(body, "SignRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17744,6 +17924,8 @@ export class JsonldApi {
             body: ObjectSerializer.serialize(body, "VerifyRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17772,6 +17954,7 @@ export class JsonldApi {
     }
 }
 export enum LedgerApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -17782,6 +17965,7 @@ export class LedgerApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -17856,6 +18040,8 @@ export class LedgerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -17915,6 +18101,8 @@ export class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -17976,6 +18164,8 @@ export class LedgerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18026,6 +18216,8 @@ export class LedgerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18075,6 +18267,8 @@ export class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18156,6 +18350,8 @@ export class LedgerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18205,6 +18401,8 @@ export class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18258,6 +18456,8 @@ export class LedgerApi {
             body: ObjectSerializer.serialize(body, "TAAAccept")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18308,6 +18508,8 @@ export class LedgerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18336,6 +18538,7 @@ export class LedgerApi {
     }
 }
 export enum MediationApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -18346,6 +18549,7 @@ export class MediationApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -18405,6 +18609,8 @@ export class MediationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18454,6 +18660,8 @@ export class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18514,6 +18722,8 @@ export class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18584,6 +18794,8 @@ export class MediationApi {
             body: ObjectSerializer.serialize(body, "KeylistQueryFilterRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18643,6 +18855,8 @@ export class MediationApi {
             body: ObjectSerializer.serialize(body, "KeylistUpdateRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18699,6 +18913,8 @@ export class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18758,6 +18974,8 @@ export class MediationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "MediationCreateRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18829,6 +19047,8 @@ export class MediationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -18885,6 +19105,8 @@ export class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -18945,6 +19167,8 @@ export class MediationApi {
             body: ObjectSerializer.serialize(body, "AdminMediationDeny")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19001,6 +19225,8 @@ export class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19059,6 +19285,8 @@ export class MediationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19087,6 +19315,7 @@ export class MediationApi {
     }
 }
 export enum MultitenancyApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -19097,6 +19326,7 @@ export class MultitenancyApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -19158,6 +19388,8 @@ export class MultitenancyApi {
             body: ObjectSerializer.serialize(body, "CreateWalletRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19214,6 +19446,8 @@ export class MultitenancyApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19274,6 +19508,8 @@ export class MultitenancyApi {
             body: ObjectSerializer.serialize(body, "UpdateWalletRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19332,6 +19568,8 @@ export class MultitenancyApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RemoveWalletRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19392,6 +19630,8 @@ export class MultitenancyApi {
             body: ObjectSerializer.serialize(body, "CreateWalletTokenRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19447,6 +19687,8 @@ export class MultitenancyApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19475,6 +19717,7 @@ export class MultitenancyApi {
     }
 }
 export enum OutOfBandApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -19485,6 +19728,7 @@ export class OutOfBandApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -19555,6 +19799,8 @@ export class OutOfBandApi {
             json: true,
             body: ObjectSerializer.serialize(body, "InvitationCreateRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19628,6 +19874,8 @@ export class OutOfBandApi {
             body: ObjectSerializer.serialize(body, "InvitationMessage")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19656,6 +19904,7 @@ export class OutOfBandApi {
     }
 }
 export enum PresentProofV10ApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -19666,6 +19915,7 @@ export class PresentProofV10Api {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -19726,6 +19976,8 @@ export class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationCreateRequestRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19796,6 +20048,8 @@ export class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -19874,6 +20128,8 @@ export class PresentProofV10Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19931,6 +20187,8 @@ export class PresentProofV10Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -19987,6 +20245,8 @@ export class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20047,6 +20307,8 @@ export class PresentProofV10Api {
             body: ObjectSerializer.serialize(body, "V10PresentationProblemReportRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20105,6 +20367,8 @@ export class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "IndyPresSpec")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20165,6 +20429,8 @@ export class PresentProofV10Api {
             body: ObjectSerializer.serialize(body, "AdminAPIMessageTracing")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20222,6 +20488,8 @@ export class PresentProofV10Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20273,6 +20541,8 @@ export class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationProposalRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20326,6 +20596,8 @@ export class PresentProofV10Api {
             body: ObjectSerializer.serialize(body, "V10PresentationSendRequestRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20354,6 +20626,7 @@ export class PresentProofV10Api {
     }
 }
 export enum PresentProofV20ApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -20364,6 +20637,7 @@ export class PresentProofV20Api {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -20424,6 +20698,8 @@ export class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresCreateRequestRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20494,6 +20770,8 @@ export class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20572,6 +20850,8 @@ export class PresentProofV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20629,6 +20909,8 @@ export class PresentProofV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20685,6 +20967,8 @@ export class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20745,6 +21029,8 @@ export class PresentProofV20Api {
             body: ObjectSerializer.serialize(body, "V20PresProblemReportRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20803,6 +21089,8 @@ export class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresSpecByFormatRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -20863,6 +21151,8 @@ export class PresentProofV20Api {
             body: ObjectSerializer.serialize(body, "AdminAPIMessageTracing")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20920,6 +21210,8 @@ export class PresentProofV20Api {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -20971,6 +21263,8 @@ export class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresProposalRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -21024,6 +21318,8 @@ export class PresentProofV20Api {
             body: ObjectSerializer.serialize(body, "V20PresSendRequestRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21052,6 +21348,7 @@ export class PresentProofV20Api {
     }
 }
 export enum QAProtocolApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -21062,6 +21359,7 @@ export class QAProtocolApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -21130,6 +21428,8 @@ export class QAProtocolApi {
             body: ObjectSerializer.serialize(body, "QuestionRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21180,6 +21480,8 @@ export class QAProtocolApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21228,6 +21530,8 @@ export class QAProtocolApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -21285,6 +21589,8 @@ export class QAProtocolApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21341,6 +21647,8 @@ export class QAProtocolApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21368,6 +21676,7 @@ export class QAProtocolApi {
     }
 }
 export enum ResolverApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -21378,6 +21687,7 @@ export class ResolverApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -21444,6 +21754,8 @@ export class ResolverApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21472,6 +21784,7 @@ export class ResolverApi {
     }
 }
 export enum RevocationApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -21482,6 +21795,7 @@ export class RevocationApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -21548,6 +21862,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21600,6 +21916,8 @@ export class RevocationApi {
             body: ObjectSerializer.serialize(body, "ClearPendingRevocationsRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21651,6 +21969,8 @@ export class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RevRegCreateRequest")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -21717,6 +22037,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21768,6 +22090,8 @@ export class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "PublishRevocations")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -21828,6 +22152,8 @@ export class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -21896,6 +22222,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -21963,6 +22291,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22020,6 +22350,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22076,6 +22408,8 @@ export class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22135,6 +22469,8 @@ export class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RevRegUpdateTailsFileUri")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22203,6 +22539,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22259,6 +22597,8 @@ export class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22317,6 +22657,8 @@ export class RevocationApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22369,6 +22711,8 @@ export class RevocationApi {
             body: ObjectSerializer.serialize(body, "RevokeRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22397,6 +22741,7 @@ export class RevocationApi {
     }
 }
 export enum SchemaApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -22407,6 +22752,7 @@ export class SchemaApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -22486,6 +22832,8 @@ export class SchemaApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22548,6 +22896,8 @@ export class SchemaApi {
             body: ObjectSerializer.serialize(body, "SchemaSendRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22604,6 +22954,8 @@ export class SchemaApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22662,6 +23014,8 @@ export class SchemaApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22690,6 +23044,7 @@ export class SchemaApi {
     }
 }
 export enum ServerApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -22700,6 +23055,7 @@ export class ServerApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -22759,6 +23115,8 @@ export class ServerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22808,6 +23166,8 @@ export class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22859,6 +23219,8 @@ export class ServerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -22908,6 +23270,8 @@ export class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -22959,6 +23323,8 @@ export class ServerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23008,6 +23374,8 @@ export class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -23059,6 +23427,8 @@ export class ServerApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23087,6 +23457,7 @@ export class ServerApi {
     }
 }
 export enum TrustpingApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -23097,6 +23468,7 @@ export class TrustpingApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -23165,6 +23537,8 @@ export class TrustpingApi {
             body: ObjectSerializer.serialize(body, "PingRequest")
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23193,6 +23567,7 @@ export class TrustpingApi {
     }
 }
 export enum WalletApiApiKeys {
+    ApiKeyHeader,
     AuthorizationHeader,
 }
 
@@ -23203,6 +23578,7 @@ export class WalletApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
+        'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
         'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
     }
 
@@ -23263,6 +23639,8 @@ export class WalletApi {
             json: true,
             body: ObjectSerializer.serialize(body, "DIDCreate")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -23339,6 +23717,8 @@ export class WalletApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23399,6 +23779,8 @@ export class WalletApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23448,6 +23830,8 @@ export class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
@@ -23509,6 +23893,8 @@ export class WalletApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23569,6 +23955,8 @@ export class WalletApi {
             json: true,
         };
 
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
+
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.default.applyToRequest(localVarRequestOptions);
@@ -23620,6 +24008,8 @@ export class WalletApi {
             json: true,
             body: ObjectSerializer.serialize(body, "DIDEndpointWithType")
         };
+
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
 
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
 

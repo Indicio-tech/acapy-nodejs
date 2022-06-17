@@ -8473,7 +8473,8 @@ class VoidAuth {
 exports.VoidAuth = VoidAuth;
 var ActionMenuApiApiKeys;
 (function (ActionMenuApiApiKeys) {
-    ActionMenuApiApiKeys[ActionMenuApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    ActionMenuApiApiKeys[ActionMenuApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    ActionMenuApiApiKeys[ActionMenuApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(ActionMenuApiApiKeys = exports.ActionMenuApiApiKeys || (exports.ActionMenuApiApiKeys = {}));
 class ActionMenuApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -8482,6 +8483,7 @@ class ActionMenuApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -8536,6 +8538,7 @@ class ActionMenuApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8589,6 +8592,7 @@ class ActionMenuApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8644,6 +8648,7 @@ class ActionMenuApi {
             json: true,
             body: ObjectSerializer.serialize(body, "PerformRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8697,6 +8702,7 @@ class ActionMenuApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8752,6 +8758,7 @@ class ActionMenuApi {
             json: true,
             body: ObjectSerializer.serialize(body, "SendMenu")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8783,7 +8790,8 @@ class ActionMenuApi {
 exports.ActionMenuApi = ActionMenuApi;
 var BasicmessageApiApiKeys;
 (function (BasicmessageApiApiKeys) {
-    BasicmessageApiApiKeys[BasicmessageApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    BasicmessageApiApiKeys[BasicmessageApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    BasicmessageApiApiKeys[BasicmessageApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(BasicmessageApiApiKeys = exports.BasicmessageApiApiKeys || (exports.BasicmessageApiApiKeys = {}));
 class BasicmessageApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -8792,6 +8800,7 @@ class BasicmessageApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -8848,6 +8857,7 @@ class BasicmessageApi {
             json: true,
             body: ObjectSerializer.serialize(body, "SendMessage")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -8879,7 +8889,8 @@ class BasicmessageApi {
 exports.BasicmessageApi = BasicmessageApi;
 var ConnectionApiApiKeys;
 (function (ConnectionApiApiKeys) {
-    ConnectionApiApiKeys[ConnectionApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    ConnectionApiApiKeys[ConnectionApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    ConnectionApiApiKeys[ConnectionApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(ConnectionApiApiKeys = exports.ConnectionApiApiKeys || (exports.ConnectionApiApiKeys = {}));
 class ConnectionApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -8888,6 +8899,7 @@ class ConnectionApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -8954,6 +8966,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9011,6 +9024,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9064,6 +9078,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9117,6 +9132,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9176,6 +9192,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9229,6 +9246,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9286,6 +9304,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9341,6 +9360,7 @@ class ConnectionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ConnectionMetadataSetRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9406,6 +9426,7 @@ class ConnectionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "CreateInvitationRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9455,6 +9476,7 @@ class ConnectionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ConnectionStaticRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9512,7 +9534,7 @@ class ConnectionApi {
             localVarQueryParameters['my_did'] = ObjectSerializer.serialize(my_did, "string");
         }
         if (state !== undefined) {
-            localVarQueryParameters['state'] = ObjectSerializer.serialize(state, "'request' | 'start' | 'invitation' | 'abandoned' | 'completed' | 'response' | 'error' | 'active' | 'init'");
+            localVarQueryParameters['state'] = ObjectSerializer.serialize(state, "'invitation' | 'error' | 'start' | 'request' | 'init' | 'abandoned' | 'active' | 'completed' | 'response'");
         }
         if (their_did !== undefined) {
             localVarQueryParameters['their_did'] = ObjectSerializer.serialize(their_did, "string");
@@ -9530,6 +9552,7 @@ class ConnectionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9591,6 +9614,7 @@ class ConnectionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ReceiveInvitationRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9622,7 +9646,8 @@ class ConnectionApi {
 exports.ConnectionApi = ConnectionApi;
 var CredentialDefinitionApiApiKeys;
 (function (CredentialDefinitionApiApiKeys) {
-    CredentialDefinitionApiApiKeys[CredentialDefinitionApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    CredentialDefinitionApiApiKeys[CredentialDefinitionApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    CredentialDefinitionApiApiKeys[CredentialDefinitionApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(CredentialDefinitionApiApiKeys = exports.CredentialDefinitionApiApiKeys || (exports.CredentialDefinitionApiApiKeys = {}));
 class CredentialDefinitionApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -9631,6 +9656,7 @@ class CredentialDefinitionApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -9703,6 +9729,7 @@ class CredentialDefinitionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9756,6 +9783,7 @@ class CredentialDefinitionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9809,6 +9837,7 @@ class CredentialDefinitionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9866,6 +9895,7 @@ class CredentialDefinitionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "CredentialDefinitionSendRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -9897,7 +9927,8 @@ class CredentialDefinitionApi {
 exports.CredentialDefinitionApi = CredentialDefinitionApi;
 var CredentialsApiApiKeys;
 (function (CredentialsApiApiKeys) {
-    CredentialsApiApiKeys[CredentialsApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    CredentialsApiApiKeys[CredentialsApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    CredentialsApiApiKeys[CredentialsApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(CredentialsApiApiKeys = exports.CredentialsApiApiKeys || (exports.CredentialsApiApiKeys = {}));
 class CredentialsApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -9906,6 +9937,7 @@ class CredentialsApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -9960,6 +9992,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10013,6 +10046,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10066,6 +10100,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10127,6 +10162,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10180,6 +10216,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10233,6 +10270,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10292,6 +10330,7 @@ class CredentialsApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10353,6 +10392,7 @@ class CredentialsApi {
             json: true,
             body: ObjectSerializer.serialize(body, "W3CCredentialsListRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10384,7 +10424,8 @@ class CredentialsApi {
 exports.CredentialsApi = CredentialsApi;
 var DidExchangeApiApiKeys;
 (function (DidExchangeApiApiKeys) {
-    DidExchangeApiApiKeys[DidExchangeApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    DidExchangeApiApiKeys[DidExchangeApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    DidExchangeApiApiKeys[DidExchangeApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(DidExchangeApiApiKeys = exports.DidExchangeApiApiKeys || (exports.DidExchangeApiApiKeys = {}));
 class DidExchangeApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -10393,6 +10434,7 @@ class DidExchangeApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -10455,6 +10497,7 @@ class DidExchangeApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10516,6 +10559,7 @@ class DidExchangeApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10591,6 +10635,7 @@ class DidExchangeApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10656,6 +10701,7 @@ class DidExchangeApi {
             json: true,
             body: ObjectSerializer.serialize(body, "DIDXRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10687,7 +10733,8 @@ class DidExchangeApi {
 exports.DidExchangeApi = DidExchangeApi;
 var DiscoverFeaturesApiApiKeys;
 (function (DiscoverFeaturesApiApiKeys) {
-    DiscoverFeaturesApiApiKeys[DiscoverFeaturesApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    DiscoverFeaturesApiApiKeys[DiscoverFeaturesApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    DiscoverFeaturesApiApiKeys[DiscoverFeaturesApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(DiscoverFeaturesApiApiKeys = exports.DiscoverFeaturesApiApiKeys || (exports.DiscoverFeaturesApiApiKeys = {}));
 class DiscoverFeaturesApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -10696,6 +10743,7 @@ class DiscoverFeaturesApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -10756,6 +10804,7 @@ class DiscoverFeaturesApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10807,6 +10856,7 @@ class DiscoverFeaturesApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10838,7 +10888,8 @@ class DiscoverFeaturesApi {
 exports.DiscoverFeaturesApi = DiscoverFeaturesApi;
 var DiscoverFeaturesV20ApiApiKeys;
 (function (DiscoverFeaturesV20ApiApiKeys) {
-    DiscoverFeaturesV20ApiApiKeys[DiscoverFeaturesV20ApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    DiscoverFeaturesV20ApiApiKeys[DiscoverFeaturesV20ApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    DiscoverFeaturesV20ApiApiKeys[DiscoverFeaturesV20ApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(DiscoverFeaturesV20ApiApiKeys = exports.DiscoverFeaturesV20ApiApiKeys || (exports.DiscoverFeaturesV20ApiApiKeys = {}));
 class DiscoverFeaturesV20Api {
     constructor(basePathOrUsername, password, basePath) {
@@ -10847,6 +10898,7 @@ class DiscoverFeaturesV20Api {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -10907,6 +10959,7 @@ class DiscoverFeaturesV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10958,6 +11011,7 @@ class DiscoverFeaturesV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -10989,7 +11043,8 @@ class DiscoverFeaturesV20Api {
 exports.DiscoverFeaturesV20Api = DiscoverFeaturesV20Api;
 var EndorseTransactionApiApiKeys;
 (function (EndorseTransactionApiApiKeys) {
-    EndorseTransactionApiApiKeys[EndorseTransactionApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    EndorseTransactionApiApiKeys[EndorseTransactionApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    EndorseTransactionApiApiKeys[EndorseTransactionApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(EndorseTransactionApiApiKeys = exports.EndorseTransactionApiApiKeys || (exports.EndorseTransactionApiApiKeys = {}));
 class EndorseTransactionApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -10998,6 +11053,7 @@ class EndorseTransactionApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -11052,6 +11108,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11117,6 +11174,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11174,6 +11232,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11235,6 +11294,7 @@ class EndorseTransactionApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ModelDate")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11282,6 +11342,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11335,6 +11396,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11388,6 +11450,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11441,6 +11504,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11494,6 +11558,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11547,6 +11612,7 @@ class EndorseTransactionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11578,7 +11644,8 @@ class EndorseTransactionApi {
 exports.EndorseTransactionApi = EndorseTransactionApi;
 var IntroductionApiApiKeys;
 (function (IntroductionApiApiKeys) {
-    IntroductionApiApiKeys[IntroductionApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    IntroductionApiApiKeys[IntroductionApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    IntroductionApiApiKeys[IntroductionApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(IntroductionApiApiKeys = exports.IntroductionApiApiKeys || (exports.IntroductionApiApiKeys = {}));
 class IntroductionApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -11587,6 +11654,7 @@ class IntroductionApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -11653,6 +11721,7 @@ class IntroductionApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11684,7 +11753,8 @@ class IntroductionApi {
 exports.IntroductionApi = IntroductionApi;
 var IssueCredentialV10ApiApiKeys;
 (function (IssueCredentialV10ApiApiKeys) {
-    IssueCredentialV10ApiApiKeys[IssueCredentialV10ApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    IssueCredentialV10ApiApiKeys[IssueCredentialV10ApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    IssueCredentialV10ApiApiKeys[IssueCredentialV10ApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(IssueCredentialV10ApiApiKeys = exports.IssueCredentialV10ApiApiKeys || (exports.IssueCredentialV10ApiApiKeys = {}));
 class IssueCredentialV10Api {
     constructor(basePathOrUsername, password, basePath) {
@@ -11693,6 +11763,7 @@ class IssueCredentialV10Api {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -11743,6 +11814,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialConnFreeOfferRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11792,6 +11864,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialCreate")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11845,6 +11918,7 @@ class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11898,6 +11972,7 @@ class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -11953,6 +12028,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialIssueRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12008,6 +12084,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialProblemReportRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12063,6 +12140,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialBoundOfferRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12116,6 +12194,7 @@ class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12171,6 +12250,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialStoreRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12234,6 +12314,7 @@ class IssueCredentialV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12283,6 +12364,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialFreeOfferRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12332,6 +12414,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialProposalRequestMand")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12381,6 +12464,7 @@ class IssueCredentialV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10CredentialProposalRequestOpt")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12412,7 +12496,8 @@ class IssueCredentialV10Api {
 exports.IssueCredentialV10Api = IssueCredentialV10Api;
 var IssueCredentialV20ApiApiKeys;
 (function (IssueCredentialV20ApiApiKeys) {
-    IssueCredentialV20ApiApiKeys[IssueCredentialV20ApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    IssueCredentialV20ApiApiKeys[IssueCredentialV20ApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    IssueCredentialV20ApiApiKeys[IssueCredentialV20ApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(IssueCredentialV20ApiApiKeys = exports.IssueCredentialV20ApiApiKeys || (exports.IssueCredentialV20ApiApiKeys = {}));
 class IssueCredentialV20Api {
     constructor(basePathOrUsername, password, basePath) {
@@ -12421,6 +12506,7 @@ class IssueCredentialV20Api {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -12471,6 +12557,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredOfferConnFreeRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12520,6 +12607,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20IssueCredSchemaCore")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12573,6 +12661,7 @@ class IssueCredentialV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12626,6 +12715,7 @@ class IssueCredentialV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12681,6 +12771,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredIssueRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12736,6 +12827,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredIssueProblemReportRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12791,6 +12883,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredBoundOfferRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12846,6 +12939,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredRequestRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12901,6 +12995,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredStoreRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -12964,6 +13059,7 @@ class IssueCredentialV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13013,6 +13109,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredOfferRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13062,6 +13159,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredExFree")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13111,6 +13209,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredExFree")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13160,6 +13259,7 @@ class IssueCredentialV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20CredRequestFree")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13191,7 +13291,8 @@ class IssueCredentialV20Api {
 exports.IssueCredentialV20Api = IssueCredentialV20Api;
 var JsonldApiApiKeys;
 (function (JsonldApiApiKeys) {
-    JsonldApiApiKeys[JsonldApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    JsonldApiApiKeys[JsonldApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    JsonldApiApiKeys[JsonldApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(JsonldApiApiKeys = exports.JsonldApiApiKeys || (exports.JsonldApiApiKeys = {}));
 class JsonldApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -13200,6 +13301,7 @@ class JsonldApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -13250,6 +13352,7 @@ class JsonldApi {
             json: true,
             body: ObjectSerializer.serialize(body, "SignRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13299,6 +13402,7 @@ class JsonldApi {
             json: true,
             body: ObjectSerializer.serialize(body, "VerifyRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13330,7 +13434,8 @@ class JsonldApi {
 exports.JsonldApi = JsonldApi;
 var LedgerApiApiKeys;
 (function (LedgerApiApiKeys) {
-    LedgerApiApiKeys[LedgerApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    LedgerApiApiKeys[LedgerApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    LedgerApiApiKeys[LedgerApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(LedgerApiApiKeys = exports.LedgerApiApiKeys || (exports.LedgerApiApiKeys = {}));
 class LedgerApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -13339,6 +13444,7 @@ class LedgerApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -13399,6 +13505,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13454,6 +13561,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13509,6 +13617,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13556,6 +13665,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13603,6 +13713,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13674,6 +13785,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13721,6 +13833,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13770,6 +13883,7 @@ class LedgerApi {
             json: true,
             body: ObjectSerializer.serialize(body, "TAAAccept")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13817,6 +13931,7 @@ class LedgerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13848,7 +13963,8 @@ class LedgerApi {
 exports.LedgerApi = LedgerApi;
 var MediationApiApiKeys;
 (function (MediationApiApiKeys) {
-    MediationApiApiKeys[MediationApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    MediationApiApiKeys[MediationApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    MediationApiApiKeys[MediationApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(MediationApiApiKeys = exports.MediationApiApiKeys || (exports.MediationApiApiKeys = {}));
 class MediationApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -13857,6 +13973,7 @@ class MediationApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -13905,6 +14022,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -13952,6 +14070,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14007,6 +14126,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14070,6 +14190,7 @@ class MediationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "KeylistQueryFilterRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14125,6 +14246,7 @@ class MediationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "KeylistUpdateRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14178,6 +14300,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14233,6 +14356,7 @@ class MediationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "MediationCreateRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14296,6 +14420,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14349,6 +14474,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14404,6 +14530,7 @@ class MediationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "AdminMediationDeny")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14457,6 +14584,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14510,6 +14638,7 @@ class MediationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14541,7 +14670,8 @@ class MediationApi {
 exports.MediationApi = MediationApi;
 var MultitenancyApiApiKeys;
 (function (MultitenancyApiApiKeys) {
-    MultitenancyApiApiKeys[MultitenancyApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    MultitenancyApiApiKeys[MultitenancyApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    MultitenancyApiApiKeys[MultitenancyApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(MultitenancyApiApiKeys = exports.MultitenancyApiApiKeys || (exports.MultitenancyApiApiKeys = {}));
 class MultitenancyApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -14550,6 +14680,7 @@ class MultitenancyApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -14600,6 +14731,7 @@ class MultitenancyApi {
             json: true,
             body: ObjectSerializer.serialize(body, "CreateWalletRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14653,6 +14785,7 @@ class MultitenancyApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14708,6 +14841,7 @@ class MultitenancyApi {
             json: true,
             body: ObjectSerializer.serialize(body, "UpdateWalletRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14763,6 +14897,7 @@ class MultitenancyApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RemoveWalletRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14818,6 +14953,7 @@ class MultitenancyApi {
             json: true,
             body: ObjectSerializer.serialize(body, "CreateWalletTokenRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14869,6 +15005,7 @@ class MultitenancyApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -14900,7 +15037,8 @@ class MultitenancyApi {
 exports.MultitenancyApi = MultitenancyApi;
 var OutOfBandApiApiKeys;
 (function (OutOfBandApiApiKeys) {
-    OutOfBandApiApiKeys[OutOfBandApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    OutOfBandApiApiKeys[OutOfBandApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    OutOfBandApiApiKeys[OutOfBandApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(OutOfBandApiApiKeys = exports.OutOfBandApiApiKeys || (exports.OutOfBandApiApiKeys = {}));
 class OutOfBandApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -14909,6 +15047,7 @@ class OutOfBandApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -14967,6 +15106,7 @@ class OutOfBandApi {
             json: true,
             body: ObjectSerializer.serialize(body, "InvitationCreateRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15032,6 +15172,7 @@ class OutOfBandApi {
             json: true,
             body: ObjectSerializer.serialize(body, "InvitationMessage")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15063,7 +15204,8 @@ class OutOfBandApi {
 exports.OutOfBandApi = OutOfBandApi;
 var PresentProofV10ApiApiKeys;
 (function (PresentProofV10ApiApiKeys) {
-    PresentProofV10ApiApiKeys[PresentProofV10ApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    PresentProofV10ApiApiKeys[PresentProofV10ApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    PresentProofV10ApiApiKeys[PresentProofV10ApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(PresentProofV10ApiApiKeys = exports.PresentProofV10ApiApiKeys || (exports.PresentProofV10ApiApiKeys = {}));
 class PresentProofV10Api {
     constructor(basePathOrUsername, password, basePath) {
@@ -15072,6 +15214,7 @@ class PresentProofV10Api {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -15122,6 +15265,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationCreateRequestRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15185,6 +15329,7 @@ class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15254,6 +15399,7 @@ class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15307,6 +15453,7 @@ class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15360,6 +15507,7 @@ class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15415,6 +15563,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationProblemReportRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15470,6 +15619,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "IndyPresSpec")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15525,6 +15675,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "AdminAPIMessageTracing")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15578,6 +15729,7 @@ class PresentProofV10Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15627,6 +15779,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationProposalRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15676,6 +15829,7 @@ class PresentProofV10Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V10PresentationSendRequestRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15707,7 +15861,8 @@ class PresentProofV10Api {
 exports.PresentProofV10Api = PresentProofV10Api;
 var PresentProofV20ApiApiKeys;
 (function (PresentProofV20ApiApiKeys) {
-    PresentProofV20ApiApiKeys[PresentProofV20ApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    PresentProofV20ApiApiKeys[PresentProofV20ApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    PresentProofV20ApiApiKeys[PresentProofV20ApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(PresentProofV20ApiApiKeys = exports.PresentProofV20ApiApiKeys || (exports.PresentProofV20ApiApiKeys = {}));
 class PresentProofV20Api {
     constructor(basePathOrUsername, password, basePath) {
@@ -15716,6 +15871,7 @@ class PresentProofV20Api {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -15766,6 +15922,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresCreateRequestRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15829,6 +15986,7 @@ class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15898,6 +16056,7 @@ class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -15951,6 +16110,7 @@ class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16004,6 +16164,7 @@ class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16059,6 +16220,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresProblemReportRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16114,6 +16276,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresSpecByFormatRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16169,6 +16332,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "AdminAPIMessageTracing")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16222,6 +16386,7 @@ class PresentProofV20Api {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16271,6 +16436,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresProposalRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16320,6 +16486,7 @@ class PresentProofV20Api {
             json: true,
             body: ObjectSerializer.serialize(body, "V20PresSendRequestRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16351,7 +16518,8 @@ class PresentProofV20Api {
 exports.PresentProofV20Api = PresentProofV20Api;
 var QAProtocolApiApiKeys;
 (function (QAProtocolApiApiKeys) {
-    QAProtocolApiApiKeys[QAProtocolApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    QAProtocolApiApiKeys[QAProtocolApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    QAProtocolApiApiKeys[QAProtocolApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(QAProtocolApiApiKeys = exports.QAProtocolApiApiKeys || (exports.QAProtocolApiApiKeys = {}));
 class QAProtocolApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -16360,6 +16528,7 @@ class QAProtocolApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -16416,6 +16585,7 @@ class QAProtocolApi {
             json: true,
             body: ObjectSerializer.serialize(body, "QuestionRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16463,6 +16633,7 @@ class QAProtocolApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16509,6 +16680,7 @@ class QAProtocolApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16561,6 +16733,7 @@ class QAProtocolApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16613,6 +16786,7 @@ class QAProtocolApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16643,7 +16817,8 @@ class QAProtocolApi {
 exports.QAProtocolApi = QAProtocolApi;
 var ResolverApiApiKeys;
 (function (ResolverApiApiKeys) {
-    ResolverApiApiKeys[ResolverApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    ResolverApiApiKeys[ResolverApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    ResolverApiApiKeys[ResolverApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(ResolverApiApiKeys = exports.ResolverApiApiKeys || (exports.ResolverApiApiKeys = {}));
 class ResolverApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -16652,6 +16827,7 @@ class ResolverApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -16706,6 +16882,7 @@ class ResolverApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16737,7 +16914,8 @@ class ResolverApi {
 exports.ResolverApi = ResolverApi;
 var RevocationApiApiKeys;
 (function (RevocationApiApiKeys) {
-    RevocationApiApiKeys[RevocationApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    RevocationApiApiKeys[RevocationApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    RevocationApiApiKeys[RevocationApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(RevocationApiApiKeys = exports.RevocationApiApiKeys || (exports.RevocationApiApiKeys = {}));
 class RevocationApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -16746,6 +16924,7 @@ class RevocationApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -16800,6 +16979,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16849,6 +17029,7 @@ class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "ClearPendingRevocationsRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16898,6 +17079,7 @@ class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RevRegCreateRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -16957,6 +17139,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17006,6 +17189,7 @@ class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "PublishRevocations")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17061,6 +17245,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17122,6 +17307,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17183,6 +17369,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17236,6 +17423,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17289,6 +17477,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17344,6 +17533,7 @@ class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RevRegUpdateTailsFileUri")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17405,6 +17595,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17458,6 +17649,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17511,6 +17703,7 @@ class RevocationApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17560,6 +17753,7 @@ class RevocationApi {
             json: true,
             body: ObjectSerializer.serialize(body, "RevokeRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17591,7 +17785,8 @@ class RevocationApi {
 exports.RevocationApi = RevocationApi;
 var SchemaApiApiKeys;
 (function (SchemaApiApiKeys) {
-    SchemaApiApiKeys[SchemaApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    SchemaApiApiKeys[SchemaApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    SchemaApiApiKeys[SchemaApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(SchemaApiApiKeys = exports.SchemaApiApiKeys || (exports.SchemaApiApiKeys = {}));
 class SchemaApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -17600,6 +17795,7 @@ class SchemaApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -17664,6 +17860,7 @@ class SchemaApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17721,6 +17918,7 @@ class SchemaApi {
             json: true,
             body: ObjectSerializer.serialize(body, "SchemaSendRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17774,6 +17972,7 @@ class SchemaApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17827,6 +18026,7 @@ class SchemaApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17858,7 +18058,8 @@ class SchemaApi {
 exports.SchemaApi = SchemaApi;
 var ServerApiApiKeys;
 (function (ServerApiApiKeys) {
-    ServerApiApiKeys[ServerApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    ServerApiApiKeys[ServerApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    ServerApiApiKeys[ServerApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(ServerApiApiKeys = exports.ServerApiApiKeys || (exports.ServerApiApiKeys = {}));
 class ServerApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -17867,6 +18068,7 @@ class ServerApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -17915,6 +18117,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -17962,6 +18165,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18009,6 +18213,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18056,6 +18261,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18103,6 +18309,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18150,6 +18357,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18197,6 +18405,7 @@ class ServerApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18228,7 +18437,8 @@ class ServerApi {
 exports.ServerApi = ServerApi;
 var TrustpingApiApiKeys;
 (function (TrustpingApiApiKeys) {
-    TrustpingApiApiKeys[TrustpingApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    TrustpingApiApiKeys[TrustpingApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    TrustpingApiApiKeys[TrustpingApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(TrustpingApiApiKeys = exports.TrustpingApiApiKeys || (exports.TrustpingApiApiKeys = {}));
 class TrustpingApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -18237,6 +18447,7 @@ class TrustpingApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -18293,6 +18504,7 @@ class TrustpingApi {
             json: true,
             body: ObjectSerializer.serialize(body, "PingRequest")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18324,7 +18536,8 @@ class TrustpingApi {
 exports.TrustpingApi = TrustpingApi;
 var WalletApiApiKeys;
 (function (WalletApiApiKeys) {
-    WalletApiApiKeys[WalletApiApiKeys["AuthorizationHeader"] = 0] = "AuthorizationHeader";
+    WalletApiApiKeys[WalletApiApiKeys["ApiKeyHeader"] = 0] = "ApiKeyHeader";
+    WalletApiApiKeys[WalletApiApiKeys["AuthorizationHeader"] = 1] = "AuthorizationHeader";
 })(WalletApiApiKeys = exports.WalletApiApiKeys || (exports.WalletApiApiKeys = {}));
 class WalletApi {
     constructor(basePathOrUsername, password, basePath) {
@@ -18333,6 +18546,7 @@ class WalletApi {
         this._useQuerystring = false;
         this.authentications = {
             'default': new VoidAuth(),
+            'ApiKeyHeader': new ApiKeyAuth('header', 'X-API-KEY'),
             'AuthorizationHeader': new ApiKeyAuth('header', 'Authorization'),
         };
         if (password) {
@@ -18383,6 +18597,7 @@ class WalletApi {
             json: true,
             body: ObjectSerializer.serialize(body, "DIDCreate")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18450,6 +18665,7 @@ class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18505,6 +18721,7 @@ class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18552,6 +18769,7 @@ class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18607,6 +18825,7 @@ class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18662,6 +18881,7 @@ class WalletApi {
             useQuerystring: this._useQuerystring,
             json: true,
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
@@ -18711,6 +18931,7 @@ class WalletApi {
             json: true,
             body: ObjectSerializer.serialize(body, "DIDEndpointWithType")
         };
+        this.authentications.ApiKeyHeader.applyToRequest(localVarRequestOptions);
         this.authentications.AuthorizationHeader.applyToRequest(localVarRequestOptions);
         this.authentications.default.applyToRequest(localVarRequestOptions);
         if (Object.keys(localVarFormParams).length) {
